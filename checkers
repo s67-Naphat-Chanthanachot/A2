@@ -35,3 +35,30 @@ void drawBoard() {
     }
   }
 }
+void drawPieces() {
+  for (int row = 0; row < 8; row++) {
+    for (int col = 0; col < 8; col++) {
+      if (board[row][col] == playerWhite) {
+        fill(255);
+        ellipse(col * tileSize + tileSize / 2, row * tileSize + tileSize / 2, tileSize - 10, tileSize - 10);  
+      } else if (board[row][col] == playerBlack) {
+        fill(0);
+        ellipse(col * tileSize + tileSize / 2, row * tileSize + tileSize / 2, tileSize - 10, tileSize - 10);  
+      } else if (board[row][col] == kingWhite) {
+        fill(255);
+        ellipse(col * tileSize + tileSize / 2, row * tileSize + tileSize / 2, tileSize - 10, tileSize - 10);  
+        textAlign(CENTER, CENTER);
+        fill(0);
+        textSize(24);
+        text("K", col * tileSize + tileSize / 2, row * tileSize + tileSize / 2);
+      } else if (board[row][col] == kingBlack) {
+        fill(50);
+        ellipse(col * tileSize + tileSize / 2, row * tileSize + tileSize / 2, tileSize - 10, tileSize - 10);  
+        textAlign(CENTER, CENTER);
+        fill(255);
+        textSize(24);
+        text("K", col * tileSize + tileSize / 2, row * tileSize + tileSize / 2);
+      }
+    }
+  }
+}
