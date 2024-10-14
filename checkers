@@ -1,0 +1,24 @@
+int[][] board = new int[8][8]; 
+int tileSize = 80;
+int currentPlayer = 1;
+boolean pieceSelected = false;
+int selectedRow = -1, selectedCol = -1;
+int playerWhite = 1, kingWhite = 2;
+int playerBlack = -1, kingBlack = -2;
+boolean gameEnded = false;
+
+void setup() {
+  size(640, 640);
+  initializeBoard();
+}
+
+void draw() {
+  background(255);
+  drawBoard();
+  drawPieces();
+  displayCurrentPlayer();
+
+  if (gameEnded) {
+    displayGameOver();
+  }
+}
