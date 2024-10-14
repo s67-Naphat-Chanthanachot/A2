@@ -98,3 +98,8 @@ void movePiece(int fromRow, int fromCol, int toRow, int toCol) {
   board[fromRow][fromCol] = 0;
   promotePiece(toRow, toCol);
 }
+void restartGame() {
+  initializeBoard();
+  currentPlayer = playerWhite;
+  gameEnded = false;
+}
