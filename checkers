@@ -68,3 +68,19 @@ void displayCurrentPlayer() {
   String playerText = (currentPlayer == playerWhite) ? "Turn: White" : "Turn: Black";
   text(playerText, 20, height - 20);
 }
+void checkGameOver() {
+  int whiteCount = 0, blackCount = 0;
+
+  for (int row = 0; row < 8; row++) {
+    for (int col = 0; col < 8; col++) {
+      if (board[row][col] == playerWhite || board[row][col] == kingWhite) {
+        whiteCount++;
+      } else if (board[row][col] == playerBlack || board[row][col] == kingBlack) {
+        blackCount++;
+      }
+    }
+  }
+  if (whiteCount == 0 || blackCount == 0) {
+    gameEnded = true;
+  }
+}
